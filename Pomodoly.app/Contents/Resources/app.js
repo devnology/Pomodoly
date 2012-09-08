@@ -1,6 +1,8 @@
 (function (Ti, pomodoly) {
 	"use strict";
-
+	
+	Ti.UI.getCurrentWindow().hide();
+	
 	pomodoly.Timer = function Timer(minutes) {
 		var timerId
 			, onstartCallback
