@@ -1,0 +1,114 @@
+body {
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: black;
+	margin: 0;
+	padding: 0;
+	letter-spacing: .07em;
+	cursor: default;
+}
+
+.inactive body,
+.inactive .window .footer {
+}
+
+button {
+	font-size: 10pt;
+}
+
+.window {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.window #header {
+	position: absolute;
+	right: 0;
+	top: 0;
+	left: 0;
+	height: 50px;
+	line-height: 50px;
+	background: #DEDEDE;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #DEDEDE), color-stop(100%, #CCCCCC)); /* Chrome,Safari4+ */
+	text-align: center;
+}
+.inactive .window #header{
+	background-color: #f3f3f3;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f3f3), color-stop(100%, #E0E0E0)); /* Chrome,Safari4+ */
+}
+
+.window .left.panel {
+	position: absolute;
+	top: 50px;
+	bottom: 24px;
+	left: 0;
+	width: 200px;
+	padding: 5px;
+	border-top: 1px solid #b4b4b4;
+	border-right: 1px solid #EBEEF2;
+	border-bottom: 1px solid #b4b4b4;
+	background-color: #e9edf1;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e9edf1), color-stop(100%, #d1d8df)); /* Chrome,Safari4+ */
+	font-size: 11px;
+	font-weight: 600;
+	color: #707e8b;
+}
+.inactive .left.panel {
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background: #f8f8f8;
+}
+
+.window .main.panel {
+	position: absolute;
+	top: 50px;
+	right: 0;
+	bottom: 24px;
+	left: 200px;
+	padding: 5px;
+	background-color: white;
+	border-top: 1px solid #b4b4b4;
+	border-left: 1px solid #b4b4b4;
+	border-bottom: 1px solid #b4b4b4;
+	overflow-x: auto;
+}
+
+.inactive .window .main.panel {
+	background-color: white;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.window #footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 24px;
+	text-align: center;
+	font-size: 9pt;
+	letter-spacing: .13em;
+	color: #222;
+	line-height: 24px;
+	border-top: 1px solid #b4b4b4;
+	text-shadow: 1px 1px 1px white;
+	background: #DEDEDE;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #DEDEDE), color-stop(100%, #BBB)); /* Chrome,Safari4+ */
+	text-align: center;
+}
+.inactive .window #footer {
+	border-top: 1px solid #ccc;
+	background-color: #f3f3f3;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f3f3), color-stop(100%, #E0E0E0)); /* Chrome,Safari4+ */
+}
