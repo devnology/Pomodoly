@@ -3,41 +3,6 @@
 	
 	Ti.UI.getCurrentWindow().hide();
 	
-	pomodoly.Timer = function Timer(minutes) {
-		var timerId
-			, onstartCallback
-			, onerrorCallback
-			, onfinishCallback;
-
-		this.start = function () {
-			if (timerId) {
-				return onerrorCallback && onerrorCallback(new Error("Timer already started!"));
-			}
-
-			timerId = setTimeout(function () {
-				timerId = undefined;
-				onfinishCallback && onfinishCallback();
-			}, minutes * 60 * 1000);
-
-			onstartCallback && onstartCallback();
-		};
-
-		this.onstart = function (callback) {
-			onstartCallback = callback;
-		};
-
-		this.onerror = function (callback) {
-			onerrorCallback = callback;
-		};
-		this.onfinish = function (callback) {
-			onfinishCallback = callback;
-		};
-
-		this.stop = function () {
-			clearTimeout(timerId);
-		};
-	};
-
 	try {
 
 		var currentTimer = new pomodoly.Timer(0.1);
@@ -55,8 +20,13 @@
 
 			var menu = Titanium.UI.createMenu();
 			var startMenuItem = Titanium.UI.createMenuItem("Start", function () {
-				currentTimer.start();
-				startMenuItem.setLabel("Stop");
+				if (currentTimer.isStarted) {
+					currentTimer.stop();
+					startMenuItem.setLabel("Start");
+				} else {
+					currentTimer.start();
+					startMenuItem.setLabel("Stop");
+				}
 			});
 			var quitMenuItem = Titanium.UI.createMenuItem("Quit", function () {
 				//console.log("Quit!");
